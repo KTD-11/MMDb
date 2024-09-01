@@ -1,0 +1,421 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Dancing+Script:wght@400..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Comfortaa:wght@300..700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Dancing+Script:wght@400..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+::selection{
+    color: black;
+    background: white;
+}
+
+:root {  
+    --purple: rgb(123, 31, 162);
+    --violet: rgb(103, 58, 183);
+    --pink: rgb(244, 143, 177);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(190, 225, 255);
+    transition: 1s ease-in-out;
+    font-weight: bold;
+}
+
+a:hover{
+    cursor: pointer;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    background-color: black;
+    align-items: center;
+    gap: 2vmax;
+    margin-top: 2.5vmax;
+    font-size: 1.5rem;
+    font-family: "Comfortaa", sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    flex-direction: column;
+}
+
+section{
+    height: 150vh;
+}
+  
+@keyframes background-pan {
+    from {
+        background-position: 0% center; 
+    }
+    
+    to {
+        background-position: -200% center;
+    }
+}
+  
+@keyframes scale {
+    from, to {
+         transform: scale(0);
+    }
+    
+    50% {
+        transform: scale(1);
+    }
+}
+  
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    
+    to {
+        transform: rotate(180deg);
+    }
+}
+  
+  
+h1 {
+    color: white;
+    font-family: "Rubik", sans-serif;
+    font-size: clamp(2em, 2vw, 4em);
+    font-weight: 400;
+    margin: 0px;
+    padding: 20px;
+    text-align: center;
+}
+  
+h1 > .magic {
+    display: inline-block;
+    position: relative;
+}
+  
+h1 > .magic > .magic-star {
+    --size: clamp(20px, 1.5vw, 30px);
+    
+    animation: scale 700ms ease forwards;
+    display: block;
+    height: var(--size);
+    left: var(--star-left);
+    position: absolute;
+    top: var(--star-top);
+    width: var(--size);
+}
+  
+h1 > .magic > .magic-star > svg {
+    animation: rotate 1000ms linear infinite;
+    display: block;
+    opacity: 0.7;
+}
+  
+h1 > .magic > .magic-star > svg > path {
+    fill: var(--violet);
+}
+  
+h1 > .magic > .magic-text, a:hover, .fancy{
+    animation: background-pan 3s linear infinite;
+    background: linear-gradient(
+        to right,
+        var(--purple),
+        var(--violet),
+        var(--pink),
+        var(--purple)
+    );
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+}
+
+.top-container{
+    display: flex; 
+    flex-direction: column; 
+    text-align: center; 
+    padding-top: 15vh;
+    height: 100vh;
+}
+
+.magic-text{
+    font-size: 10rem;
+}
+
+.top-container p{
+    font-family: "Rubik", sans-serif;
+    color: white;
+    width: 50vw;
+}
+
+section{
+    color: white;
+}
+
+.About{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Rubik", sans-serif;
+}
+
+.inner{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3vmax;
+    align-items: center;
+    justify-content: center;
+}
+
+.inner div{
+    flex: 0 0 25%;
+    transition: 0.5s ease-in-out;
+    color: rgb(255, 255, 255);
+}
+
+.inner div:hover{
+    transform: scale(1.05);
+    color: rgb(203, 226, 247);
+}
+
+
+@media (max-width : 850px){
+    .inner div{
+        flex: 0 0 40%;
+    }
+}
+
+@media (max-width : 750px) {
+    .inner div{
+        flex: 0 0 50%;
+    }
+
+    .houseAllThatShit{
+        flex-wrap: wrap;
+    }
+}
+
+.search{
+    height: 100vh;
+    padding-top: 5vmax;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+input{
+    outline: none;
+    background: none;
+    color: rgb(151, 151, 151); 
+    border: 3px solid;  
+    border-radius: 10px;
+    text-align: center;
+    width: 25vw;
+    height: 5vh;
+    font-family: "Rubik", sans-serif;
+    transition: 200ms ease-in-out;
+}
+
+input:focus{
+    color: white;
+}
+
+button{
+    height: 6vh;
+    outline: none;
+    background:none;
+    color: rgb(151, 151, 151);
+    border: 3px solid;  
+    border-radius: 10px;
+    transition: 200ms ease-in-out;
+}
+
+button:hover{
+    cursor: pointer;
+    border-color: white;
+    background-color: white;
+    color: black;
+}
+
+/*Search.html*/
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.textContainer{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.houseAllThatShit{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 70vw;
+    width: 70vw;
+    gap: 6vmax;
+    margin-top: 6vh;
+    color: rgb(184, 184, 184);
+    transition: 200ms ease-in-out;
+    background: none;
+    padding: 2vmax;
+    border-radius: 50px;
+    font-family: "Rubik", sans-serif;
+    
+}
+
+.houseAllThatShit:hover{
+    transform: scale(1.04);
+    color: white;
+    background-color: rgb(27, 27, 27);
+    cursor: pointer;
+}
+
+main h1{
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    color: rgb(255, 255, 255);
+    transition: ease-in-out 200ms;
+}
+
+main img, .popup img{
+    width: 185px;
+    height: 278px;
+    border-radius: 10px;
+}
+
+h6, h3{
+    padding: 0;
+    margin: 1vmax 0 0 0;
+}
+
+main > .houseAllThatShit > .innerContainer > div{
+    display: flex;
+    flex-direction: row;
+}
+
+.genresContainer{
+    display: flex;
+    flex-direction: row;
+    gap: 1vmax;
+}
+
+.popup{
+    background-color: rgba(0, 0, 0, 0.897);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100vw;
+    display: flex;
+    padding-top: 5vmax;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    color:white;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: 100vh; 
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    padding: 1vmax 5vmax 1vmax 5vmax;
+    gap: 1vmax;
+    max-width: 90vw; 
+}
+
+.popup > .headerContainer{
+    margin-bottom: 1vmax;
+    padding-bottom: 1vmax;
+}
+
+.popup > .headerContainer > h1{
+    margin: 0;
+    padding:0;
+}
+
+.popup > .headerContainer {
+    margin-bottom: 1vmax;
+    padding-bottom: 1vmax;
+    box-sizing: border-box;
+}
+
+.popup > .content {
+    max-height: 80vh;
+    overflow-y: auto; 
+}
+
+.popup::-webkit-scrollbar {
+    display: none;
+}
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+.popup {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.popup button{
+    border: none;
+    transform: scale(1.5);
+}
+
+.popup button:hover{
+    background: none;
+    transform: scale(2.4) rotate(20deg);
+    transition: none;
+}
+
+.exit button{
+    float: right;
+    transform: scale(2);
+    transition: 200ms ease-in-out;
+}
+
+.exit{
+    width: 90vw;
+}
+
+.popupclass {
+    font-family: "Rubik", sans-serif; /* Apply the Rubik font family */
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    padding: 2vmax 10vmax 2vmax 10vmax;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.849);
+}
+
+.header div{
+    margin-left: auto;
+    margin-top: 1.2vmax;
+}
+
+.header a{
+    font-family: "Rubik", sans-serif; 
+    font-size: 3rem;
+}
